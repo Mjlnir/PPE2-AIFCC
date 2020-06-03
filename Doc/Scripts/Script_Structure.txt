@@ -1,0 +1,76 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: TYPEVEHICULE
+#------------------------------------------------------------
+
+CREATE TABLE TYPEVEHICULE(
+        idTypeVehicule  	    Int  Auto_increment  NOT NULL ,
+        typeVehicule    	    Varchar (50) NOT NULL,
+	nbPlaceVehiculetypeVehicule Int NULL ,
+	CONSTRAINT TYPEVEHICULE_PK PRIMARY KEY (idTypeVehicule)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: TYPEUTILISATEUR
+#------------------------------------------------------------
+
+CREATE TABLE TYPEUTILISATEUR(
+        idTypeUtilisateur Int  Auto_increment  NOT NULL ,
+        typeUtilisateur   Varchar (10) NOT NULL
+	,CONSTRAINT TYPEUTILISATEUR_PK PRIMARY KEY (idTypeUtilisateur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: UTILISATEUR
+#------------------------------------------------------------
+
+CREATE TABLE UTILISATEUR(
+        idUtilisateur        Int  Auto_increment  NOT NULL ,
+        nomUtilisateur       Varchar (50) NOT NULL ,
+        prenomUtilisateur    Varchar (50) NOT NULL ,
+        mailUtilisateur      Varchar (50) NOT NULL ,
+        telephoneUtilisateur Varchar (10) NOT NULL ,
+        loginUtilisateur     Varchar (50) NOT NULL ,
+        passwordUtilisateur  Varchar (50) NOT NULL ,
+        idTypeUtilisateur    Int NOT NULL
+	,CONSTRAINT UTILISATEUR_PK PRIMARY KEY (idUtilisateur)
+	,CONSTRAINT UTILISATEUR_TYPEUTILISATEUR_FK FOREIGN KEY (idTypeUtilisateur) REFERENCES TYPEUTILISATEUR(idTypeUtilisateur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: VEHICULE
+#------------------------------------------------------------
+
+CREATE TABLE VEHICULE(
+        idVehicule      	Int  Auto_increment  NOT NULL ,
+        nomVehicule     	Varchar (50) NOT NULL ,
+        estDisponible   	Bit NOT NULL ,
+        autonomieVehicule   Varchar (50) NOT NULL ,
+        kilometrageVehicule Varchar (50) NOT NULL ,
+        idTypeVehicule  	Int NOT NULL ,
+	,CONSTRAINT VEHICULE_PK PRIMARY KEY (idVehicule)
+	,CONSTRAINT VEHICULE_TYPEVEHICULE_FK FOREIGN KEY (idTypeVehicule) REFERENCES TYPEVEHICULE(idTypeVehicule)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: RESERVER
+#------------------------------------------------------------
+
+CREATE TABLE RESERVER(
+        idVehicule      Int NOT NULL ,
+        jourReservation DateTime NOT NULL ,
+        idUtilisateur   Int NOT NULL ,
+        heureFin        Datetime NOT NULL
+	,CONSTRAINT RESERVER_PK PRIMARY KEY (idVehicule,jourReservation,idUtilisateur)
+	,CONSTRAINT RESERVER_VEHICULE_FK FOREIGN KEY (idVehicule) REFERENCES VEHICULE(idVehicule)
+	,CONSTRAINT RESERVER_UTILISATEUR_FK FOREIGN KEY (idUtilisateur) REFERENCES UTILISATEUR(idUtilisateur)
+)ENGINE=InnoDB;
+

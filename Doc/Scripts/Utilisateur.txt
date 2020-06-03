@@ -1,0 +1,5 @@
+INSERT INTO UTILISATEUR(nomUtilisateur,prenomUtilisateur,mailUtilisateur,telephoneUtilisateur,loginUtilisateur,passwordUtilisateur,idTypeUtilisateur)
+VALUES
+('trudelle','florian','admin.admin@pommadam.com','0666666666','ftrudell','root',1),
+('bezos','jeff','bezos.jeff@pommadam.com','0666666667','jbezos','root',2),
+('musk','elon','musk.elon@pommadam.com','0666666668','emusk','root',3),

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="POMMADAM.Views.LoginPage"
+             Title="Pommadam - Login">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblLogin" Text="Login" />
+            <Entry x:Name="txtLogin" Placeholder="jbonneau" ReturnType="Next" />
+            <Label x:Name="lblMdp" Text="Mot de passe" />
+            <Entry x:Name="txtMdp" Placeholder="" IsPassword="True" ReturnType="Send"/>
+            <Button x:Name="btnVal" Text="Se connecter" Clicked="SeConnecter" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
