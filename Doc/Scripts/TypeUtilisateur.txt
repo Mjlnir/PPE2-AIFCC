@@ -1,5 +1,0 @@
-INSERT INTO TYPEUTILISATEUR(typeutilisateur)
-VALUES
-('Admin'),
-('Gestionnaire'),
-('Emprunteur'),

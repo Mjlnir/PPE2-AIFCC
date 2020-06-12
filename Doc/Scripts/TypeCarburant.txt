@@ -1,4 +1,0 @@
-INSERT INTO TYPECARBURANT(typecarburant)
-VALUES
-('Essence'),
-('Diesel')
