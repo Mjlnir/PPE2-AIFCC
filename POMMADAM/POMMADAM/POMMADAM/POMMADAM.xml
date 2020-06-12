@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>POMMADAM</name>
+    </assembly>
+    <members>
+        <member name="M:POMMADAM.Controllers.LoginController.Login(System.String,System.String)">
+            <summary>
+            Permet de vérifier si le login et le mot de passe existent en bdd. Et si oui retoune son utilisateur.
+            </summary>
+            <param name="_sLogin"></param>
+            <param name="_sMdp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.ReservationController.GetReservations">
+            <summary>
+            Récupère tous les utilisateurs.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.ReservationController.GetReservationsByDate(System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            Permet de récupérer les réservation qui sont entre les dates choisis par l'utilisateur. 
+            Si la liste n'est pas vide, c'est qu'il doit changer de véhicule ou de date car une réservation à déjà été émise pour le véhicule et dates choisis.
+            </summary>
+            <param name="_dtJourReservation"></param>
+            <param name="_dtHeureFin"></param>
+            <param name="_iIdVehicule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.ReservationController.Reserver(System.Int32,System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            Permet de réserver un véhicule.
+            </summary>
+            <param name="_iIdVehicule"></param>
+            <param name="_dtJourReservation"></param>
+            <param name="_dtHeureFin"></param>
+            <param name="_iIdUtilisateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.ReservationController.ModifReservation(System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Permet de moodifier une réservation.
+            </summary>
+            <param name="_iIdReservation"></param>
+            <param name="_iIdVehicule"></param>
+            <param name="_dtJourReservation"></param>
+            <param name="_dtHeureFin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.ReservationController.DeleteReservation(System.Int32)">
+            <summary>
+            Permet de supprimer un véhicule.
+            </summary>
+            <param name="_iIdReservation"></param>
+        </member>
+        <member name="M:POMMADAM.Controllers.TypeUtilisateurController.GetTypesUtilisateurs">
+            <summary>
+            Récupère la liste des Types Utilisateur.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.TypeVehiculeController.GetTypesVehicules">
+            <summary>
+            Récupère la liste des types véhicule.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.UserController.GetUsers">
+            <summary>
+            Récupère les liste des utilisateurs.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.UserController.GetNomUser(System.Collections.Generic.List{POMMADAM.Models.User},System.Int32)">
+            <summary>
+            Permet de récupérer le nom de l'utilisateur via son id avec la liste des utlisateurs fournit en paramètre.
+            </summary>
+            <param name="_lstUsers"></param>
+            <param name="_iId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.UserController.AddUser(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Permet de créer un utilisateur.
+            </summary>
+            <param name="nomUser"></param>
+            <param name="prenomUser"></param>
+            <param name="mailUser"></param>
+            <param name="TelUser"></param>
+            <param name="LoginUser"></param>
+            <param name="pwdUser"></param>
+            <param name="idTypeUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.UserController.UpdUser(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Permet de modifier un utilisateur.
+            </summary>
+            <param name="nomUser"></param>
+            <param name="prenomUser"></param>
+            <param name="mailUser"></param>
+            <param name="TelUser"></param>
+            <param name="LoginUser"></param>
+            <param name="pwdUser"></param>
+            <param name="idTypeUser"></param>
+            <param name="idUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.UserController.DeleteUser(System.Int32)">
+            <summary>
+            Permet de supprimer un utilisateur.
+            </summary>
+            <param name="_iIdUser"></param>
+        </member>
+        <member name="M:POMMADAM.Controllers.VehiculeController.GetVehicules">
+            <summary>
+            Récupère la liste des véhicules.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.VehiculeController.GetNomVehicule(System.Collections.Generic.List{POMMADAM.Models.Vehicule},System.Int32)">
+            <summary>
+            Permet de récupérer le nom du véhicule via son id avec la liste des véhicules fournit en paramètre.
+            </summary>
+            <param name="_lstVehicules"></param>
+            <param name="_iId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.VehiculeController.GetVehiculesByDate(System.DateTime,System.DateTime)">
+            <summary>
+            Permet de récupérer une liste de véhicule qui ne sont pas déjà réservé dans la tranche horaire défini par l'utilisateur.
+            </summary>
+            <param name="_dtJourReservation"></param>
+            <param name="_dtHeureFin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.VehiculeController.AddVehicule(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Permet de créer un véhicule
+            </summary>
+            <param name="_tNomVehicule"></param>
+            <param name="_iKilometrage"></param>
+            <param name="_iNbPlace"></param>
+            <param name="_iEstDispo"></param>
+            <param name="_iIdTypeVehicule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.VehiculeController.ModifVehicule(System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Permet de modifier un véhicule
+            </summary>
+            <param name="_iIdVehicule"></param>
+            <param name="_tNomVehicule"></param>
+            <param name="_iKilometrage"></param>
+            <param name="_iNbPlace"></param>
+            <param name="_iEstDispo"></param>
+            <param name="_iIdTypeVehicule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:POMMADAM.Controllers.VehiculeController.DeleteVehicule(System.Int32)">
+            <summary>
+            Permet de supprimer un véhicule
+            </summary>
+            <param name="_iIdVehicule"></param>
+        </member>
+        <member name="T:POMMADAM.Models.Constants">
+            <summary>
+            Permet de stocker des variables tels que les différents liens vers l'API. Accessible partout dans le code.
+            </summary>
+        </member>
+    </members>
+</doc>

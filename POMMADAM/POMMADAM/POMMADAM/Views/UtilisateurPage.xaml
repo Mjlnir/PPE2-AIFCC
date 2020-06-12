@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="POMMADAM.Views.UtilisateurPage"
+             Title="Utilisateur" Icon="user_icon.png">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Label x:Name="lblForLstUsers" Text="Utlisateurs :" IsVisible="False"/>
+            <ListView x:Name="lstUsers" IsVisible="False" ItemSelected="LstUsers_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Id, StringFormat='Id : {0}'}"/>
+                                    <Label Text="{Binding Nom, StringFormat='Nom : {0}'}"/>
+                                    <Label Text="{Binding Prenom, StringFormat='Prenom : {0}'}"/>
+                                    <Label Text="{Binding Telephone, StringFormat='Téléphone : {0}'}"/>
+                                    <Label Text="{Binding Login, StringFormat='Login : {0}'}"/>
+                                    <Label Text="{Binding TypeUtilisateur, StringFormat='Type utilisateur : {0}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnAddUser" Text="Ajouter un Utilisateur" Clicked="BtnAddUser_Clicked" IsVisible="False"/>
+            <Label x:Name="lblDroit" Text="Vous n'avez pas le droit d'accéder à cette page."></Label>
+            <Button x:Name="btnDeco" Text="Se déconnecter" Clicked="BtnDeco_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

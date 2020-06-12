@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="POMMADAM.Views.VehiculePage"
+             Title="Véhicules" Icon="car_icon.png">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Label x:Name="lblVehicule" Text="Vehicules :" IsVisible="false"></Label>
+            <ListView x:Name="lstVehicules" ItemSelected="LstVehicules_ItemSelected" IsVisible="false">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding IdVehicule, StringFormat='Id : {0}'}"/>
+                                    <Label Text="{Binding NomVehicule, StringFormat='Nom : {0}'}"/>
+                                    <Label Text="{Binding KilometrageVehicule, StringFormat='Kilométrage : {0} Km'}"/>
+                                    <Label Text="{Binding NbPlace, StringFormat='Place dans le véhicule : {0}'}"/>
+                                    <Label Text="{Binding TypeVehicule, StringFormat='Type du véhicule : {0}'}"/>
+                                    <Label Text="{Binding EstDispo, StringFormat='Est Disponible : {0}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnAddVehicule" Text="Ajouter un Véhicule" Clicked="BtnAddVehicule_Clicked" IsVisible="false"/>
+            <Label x:Name="lblDroit" Text="Vous n'avez pas le droit d'accéder à cette page."></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

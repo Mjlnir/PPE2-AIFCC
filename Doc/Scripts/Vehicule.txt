@@ -1,0 +1,12 @@
+INSERT INTO VEHICULE(nomVehicule,estDisponible,kilometrageVehicule,nbPlaceVehicule,idTypeVehicule)
+VALUES
+('V1',1,100000,2,1),
+('V2',1,100000,2,1),
+('V3',1,100000,2,1),
+('V4',1,100000,5,1),
+('V5',1,100000,5,1),
+('CT1',1,100000,NULL,2),
+('CT2',1,100000,NULL,2),
+('C1',1,100000,NULL,3),
+('C2',1,100000,NULL,3),
+('C3',1,100000,NULL,3)

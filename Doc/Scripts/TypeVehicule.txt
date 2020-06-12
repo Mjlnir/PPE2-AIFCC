@@ -1,0 +1,5 @@
+INSERT INTO TYPEVEHICULE(typeVehicule)
+VALUES
+('Voiture'),
+('Camionnette'),
+('Camion')

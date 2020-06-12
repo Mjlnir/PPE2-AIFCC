@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="POMMADAM.Views.ModifVehicule"
+             Title="Modifier un véhicule">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblForNom" Text="Nom du véhicule:"/>
+            <Entry x:Name="txtNom" Placeholder="Nom du véhicule" ReturnType="Next"/>
+            <Label x:Name="lblForTypeV" Text="Type de véhicule :"/>
+            <Picker x:Name="pckTypeV" Title="Sélectionner un type de véhicule" SelectedIndexChanged="PckTypeV_SelectedIndexChanged" Unfocused="PckTypeV_Unfocused" ItemDisplayBinding="{Binding NomTypeVehicule}"/>
+            <Label x:Name="lblForKm" Text="Kilométrage :" />
+            <Entry x:Name="txtKm" Keyboard="Numeric" ReturnType="Next"/>
+            <Label x:Name="lblNbPlace" Text="Nombre de place :" />
+            <Entry x:Name="txtNbPlace" Keyboard="Numeric" ReturnType="Next"/>
+            <Label x:Name="lblForEstDispo" Text="Disponible ?" />
+            <Switch x:Name="swEstDispo" HorizontalOptions="Center" Toggled="SwEstDispo_Toggled"/>
+            <Button x:Name="btnVal" Text="Confirmer" Clicked="ConfirmerModif" />
+            <Button x:Name="btnCancel" Text="Annuler" Clicked="AnnulerModif" />
+            <Button x:Name="btnDelete" Text="Supprimer" Clicked="Supprimer" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

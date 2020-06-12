@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="POMMADAM.Views.Reserver"
+             Title="Réserver un véhicule">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label x:Name="lblForDateD" Text="Date de début :" />
+                <DatePicker x:Name="dpDateD" />
+                <TimePicker x:Name="tpDateD" PropertyChanged="TpDate_PropertyChanged"/>
+                <Label x:Name="lblForDateF" Text="Date de fin :" />
+                <DatePicker x:Name="dpDateF"/>
+                <TimePicker x:Name="tpDateF" PropertyChanged="TpDate_PropertyChanged"/>
+                <Label x:Name="lblForVehicule" Text="Véhicule :"/>
+                <Picker x:Name="pckVehicule" Title="Sélectionner un véhicule" ItemDisplayBinding="{Binding Nom}"/>
+                <Label x:Name="lblForUtilisateur" Text="Utilisateur :"/>
+                <Picker x:Name="pckUtilisateur" Title="Sélectionner un utilisateur" ItemDisplayBinding="{Binding Login}"/>
+                <Button x:Name="btnReserver" Text="Reserver" Clicked="ConfirmerReservation" />
+                <Button x:Name="btnCancel" Text="Annuler" Clicked="AnnulerModif" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
